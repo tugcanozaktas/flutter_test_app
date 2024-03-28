@@ -1,10 +1,7 @@
 // Flutter
 import 'package:flutter/material.dart';
-import "location_detail.dart";
+import "navigation.dart";
 
 void main() {
-  return runApp(const MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: LocationDetail(),
-  ));
+  return runApp(const Navigation());
 }
