@@ -4,5 +4,7 @@ import "location_detail.dart";
 
 void main() {
   return runApp(const MaterialApp(
-      debugShowCheckedModeBanner: true, home: LocationDetail()));
+    debugShowCheckedModeBanner: false,
+    home: LocationDetail(),
+  ));
 }

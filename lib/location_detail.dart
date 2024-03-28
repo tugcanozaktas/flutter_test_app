@@ -8,21 +8,29 @@ class LocationDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: const Text("News App")),
-        body: Column(
+        body: Row(
           mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            _section("1", Colors.red),
-            _section("2", Colors.green),
-            _section("3", Colors.blue),
+            _section("1", const Color.fromARGB(255, 255, 17, 0)),
+            const SizedBox(
+              height: 10,
+            ),
+            _section("2", const Color.fromARGB(255, 0, 255, 8)),
+            const SizedBox(
+              height: 10,
+            ),
+            _section("3", const Color.fromARGB(255, 0, 140, 255)),
           ],
         ));
   }
 
   Widget _section(String title, Color color) {
     return Container(
-      decoration: BoxDecoration(color: color),
-      child: Text(title),
+      width: 50,
+      height: 50,
+      decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+      child: Center(child: Text(title)),
     );
   }
 }
