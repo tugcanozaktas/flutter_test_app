@@ -1,7 +1,13 @@
 import "package:flutter/material.dart";
 
-class Navigation extends StatelessWidget {
+class Navigation extends StatefulWidget {
   const Navigation({super.key});
+
+  @override
+  State<Navigation> createState() => _NavigationState();
+}
+
+class _NavigationState extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -10,57 +16,50 @@ class Navigation extends StatelessWidget {
             drawer: Drawer(
               backgroundColor: Colors.black,
               child: ListView(
-                // Important: Remove any padding from the ListView.
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                children: const <Widget>[
-                  _logo(),
-                  Divider(
+                children: <Widget>[
+                  const _logo(),
+                  const Divider(
+                    color: Color.fromARGB(255, 46, 46, 46),
                     height: 1,
                     thickness: 1,
                   ),
-                  _sectionsTitle(),
-                  ListTile(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(50))),
-                    selectedTileColor: Color.fromARGB(255, 43, 43, 43),
-                    contentPadding: EdgeInsets.symmetric(horizontal: 30),
-                    title: Text(
-                      'Top Stories',
-                      style: TextStyle(color: Colors.white),
-                    ),
+                  const _sectionsTitle(),
+                  _listItem("Top Stories"),
+                  const SizedBox(
+                    height: 5,
                   ),
-                  ListTile(
-                    contentPadding: EdgeInsets.symmetric(horizontal: 30),
-                    title: Text('Arts', style: TextStyle(color: Colors.white)),
+                  _listItem("Arts"),
+                  const SizedBox(
+                    height: 5,
                   ),
-                  ListTile(
-                    contentPadding: EdgeInsets.symmetric(horizontal: 30),
-                    title:
-                        Text('Culture', style: TextStyle(color: Colors.white)),
+                  _listItem("Culture"),
+                  const SizedBox(
+                    height: 5,
                   ),
-                  ListTile(
-                    contentPadding: EdgeInsets.symmetric(horizontal: 30),
-                    title:
-                        Text('Opinion', style: TextStyle(color: Colors.white)),
+                  _listItem("Opinion"),
+                  const SizedBox(
+                    height: 5,
                   ),
-                  ListTile(
-                    contentPadding: EdgeInsets.symmetric(horizontal: 30),
-                    title: Text('Tech', style: TextStyle(color: Colors.white)),
+                  _listItem("Tech"),
+                  const SizedBox(
+                    height: 5,
                   ),
-                  ListTile(
-                    contentPadding: EdgeInsets.symmetric(horizontal: 30),
-                    title: Text('World', style: TextStyle(color: Colors.white)),
+                  _listItem("World"),
+                  const SizedBox(
+                    height: 5,
                   ),
-                  Divider(
+                  const Divider(
+                    color: Color.fromARGB(255, 46, 46, 46),
                     height: 1,
                     thickness: 1,
                   ),
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.all(16.0),
                     child: Text('Label', style: TextStyle(color: Colors.white)),
                   ),
-                  ListTile(
+                  const ListTile(
                     leading: Icon(Icons.bookmark),
                     title:
                         Text('Item A', style: TextStyle(color: Colors.white)),
@@ -74,8 +73,8 @@ class Navigation extends StatelessWidget {
                     onPressed: () => Scaffold.of(context).openDrawer(),
                     icon: const Icon(Icons.menu)),
               ),
-              title: const Text('Page title',
-                  style: TextStyle(color: Colors.white)),
+              title: const Text('TugcaNews',
+                  style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
               actions: const [
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16),
@@ -84,6 +83,20 @@ class Navigation extends StatelessWidget {
                 Icon(Icons.more_vert),
               ],
             )));
+  }
+
+  Widget _listItem(String text) {
+    return ListTile(
+      onTap: () {
+        setState(() {});
+      },
+      hoverColor: const Color.fromARGB(255, 27, 27, 27),
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(50))),
+      selectedTileColor: const Color.fromARGB(255, 27, 27, 27),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 30),
+      title: Text(text, style: const TextStyle(color: Colors.white)),
+    );
   }
 }
 
@@ -123,11 +136,15 @@ class _logo extends StatelessWidget {
             color: Colors.green,
           ),
           SizedBox(
-            width: 10,
+            width: 5,
           ),
           Text(
-            "TugcanNews",
-            style: TextStyle(color: Colors.white),
+            "TugcaNews",
+            style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 25,
+                fontStyle: FontStyle.italic),
           )
         ],
       ),
