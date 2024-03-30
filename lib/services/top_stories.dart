@@ -93,12 +93,16 @@ class _MyAppState extends State<MyApp> {
             future: futureAlbum,
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                return Container(
+                return SizedBox(
                   width: 300,
                   child: Column(children: [
-                    Text(
-                      snapshot.data!.name,
-                      textAlign: TextAlign.start,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          snapshot.data!.name,
+                        ),
+                      ],
                     ),
                     Image.network(snapshot.data!.imageUrl),
                     Text(snapshot.data!.title),
