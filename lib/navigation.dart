@@ -14,13 +14,6 @@ class _NavigationState extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData(
-          brightness: Brightness.light,
-        ),
-        darkTheme: ThemeData(
-          brightness: Brightness.dark,
-        ),
-        themeMode: ThemeMode.light,
         debugShowCheckedModeBanner: false,
         home: Scaffold(
             drawer: _sideDrawer(),
@@ -30,8 +23,7 @@ class _NavigationState extends State<Navigation> {
                     onPressed: () => Scaffold.of(context).openDrawer(),
                     icon: const Icon(Icons.menu)),
               ),
-              title: const Text('TugcaNews',
-                  style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
+              title: _logoNew(Colors.black),
               actions: <Widget>[
                 PopupMenuButton(
                     tooltip: "Settings",
@@ -56,13 +48,40 @@ class _NavigationState extends State<Navigation> {
             )));
   }
 
+  Widget _logoNew(Color color) {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Row(
+        children: [
+          const Icon(
+            Icons.newspaper_outlined,
+            size: 30,
+            color: Colors.green,
+          ),
+          const SizedBox(
+            width: 5,
+          ),
+          Text("TugcaNews",
+              style: GoogleFonts.lato(
+                textStyle: TextStyle(
+                  color: color,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25,
+                  fontStyle: FontStyle.italic,
+                ),
+              ))
+        ],
+      ),
+    );
+  }
+
   Widget _sideDrawer() {
     return Drawer(
       backgroundColor: const Color.fromARGB(255, 3, 3, 3),
       child: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         children: <Widget>[
-          const _logo(),
+          _logoNew(Colors.white),
           const Divider(
             color: Color.fromARGB(255, 46, 46, 46),
             height: 1,
@@ -153,39 +172,6 @@ class _sectionsTitle extends StatelessWidget {
                   fontStyle: FontStyle.italic,
                   fontWeight: FontWeight.bold,
                   fontSize: 20))),
-    );
-  }
-}
-
-// ignore: camel_case_types
-class _logo extends StatelessWidget {
-  const _logo();
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Row(
-        children: [
-          const Icon(
-            Icons.newspaper_outlined,
-            size: 30,
-            color: Colors.green,
-          ),
-          const SizedBox(
-            width: 5,
-          ),
-          Text("TugcaNews",
-              style: GoogleFonts.lato(
-                textStyle: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 25,
-                  fontStyle: FontStyle.italic,
-                ),
-              ))
-        ],
-      ),
     );
   }
 }
