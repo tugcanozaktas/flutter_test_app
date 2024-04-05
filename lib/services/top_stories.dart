@@ -31,13 +31,13 @@ class Album {
     required this.name,
     required this.author,
     required this.title,
-    required this.imageUrl,
+    this.imageUrl = "",
     required this.url,
     required this.description,
   });
 
   factory Album.fromJson(Map<String, dynamic> json) {
-    return switch (json["articles"][0]) {
+    return switch (json["articles"][3]) {
       {
         'source': {"name": String name},
         'author': String author,
@@ -93,6 +93,7 @@ class _MyAppState extends State<MyApp> {
             future: futureAlbum,
             builder: (context, snapshot) {
               if (snapshot.hasData) {
+                print(snapshot.data);
                 return SizedBox(
                   width: 300,
                   child: Column(children: [
