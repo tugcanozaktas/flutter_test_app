@@ -1,17 +1,30 @@
 import 'dart:async';
 import 'dart:convert';
+import "dart:io";
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+  }
+}
+
 Future<Album> fetchAlbum() async {
+  HttpOverrides.global = MyHttpOverrides();
   final response = await http.get(Uri.parse(
       'https://newsapi.org/v2/top-headlines?country=us&apiKey=f29f03ecfd244a0f83b52dfcc69bedca'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
-    return Album.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final jsonData =
+        Album.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return jsonData;
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
@@ -37,7 +50,7 @@ class Album {
   });
 
   factory Album.fromJson(Map<String, dynamic> json) {
-    return switch (json["articles"][3]) {
+    return switch (json["articles"][4]) {
       {
         'source': {"name": String name},
         'author': String author,
@@ -93,7 +106,6 @@ class _MyAppState extends State<MyApp> {
             future: futureAlbum,
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                print(snapshot.data);
                 return SizedBox(
                   width: 300,
                   child: Column(children: [
