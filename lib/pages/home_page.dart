@@ -1,6 +1,5 @@
 import "package:flutter/material.dart";
 import "package:test_drive/components/my_drawer.dart";
-import "package:test_drive/components/news_topic.dart";
 import "package:test_drive/components/topics_section.dart";
 
 class HomePage extends StatelessWidget {
