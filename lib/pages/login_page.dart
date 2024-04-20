@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:test_drive/components/my_button.dart';
 import 'package:test_drive/components/my_text_field.dart';
+import 'package:test_drive/pages/home_page.dart';
 
 // ignore: must_be_immutable
 class LoginPage extends StatefulWidget {
-  void Function()? onTap;
-  LoginPage({super.key, required this.onTap});
+  final void Function()? onTap;
+  const LoginPage({super.key, required this.onTap});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -15,6 +16,15 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
 
   final TextEditingController passwordController = TextEditingController();
+
+  void login() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const HomePage(),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
             //Login Button
             MouseRegion(
               cursor: SystemMouseCursors.click,
-              child: MyButton(onTap: () => {}, text: "Login"),
+              child: MyButton(onTap: login, text: "Login"),
             ),
 
             //Not a member text
@@ -85,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                 MouseRegion(
                   cursor: SystemMouseCursors.click,
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: widget.onTap,
                     child: Text(
                       "Register now",
                       style: TextStyle(
