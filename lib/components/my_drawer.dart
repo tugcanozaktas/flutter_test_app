@@ -1,9 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:test_drive/components/login_or_register.dart';
 import 'package:test_drive/components/my_list_tile.dart';
-import 'package:test_drive/pages/login_page.dart';
 import 'package:test_drive/pages/settings_page.dart';
 
 class MyDrawer extends StatelessWidget {

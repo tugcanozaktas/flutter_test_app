@@ -8,6 +8,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     var apiKey = "f29f03ecfd244a0f83b52dfcc69bedca";
     return Scaffold(
       appBar: AppBar(
