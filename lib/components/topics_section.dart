@@ -6,60 +6,39 @@ class TopicSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
+    return const Padding(
+      padding: EdgeInsets.all(20.0),
       child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: SizedBox(
-          width: 900,
-          child: Row(
+        scrollDirection: Axis.vertical,
+        child: Padding(
+          padding: EdgeInsets.only(top: 8.0),
+          child: Column(
             children: [
-              MyTopic(
-                text: "Business",
-                onTap: () {},
+              NewsTopic(text: "Business"),
+              SizedBox(
+                height: 25,
               ),
-              const SizedBox(
-                width: 25,
+              NewsTopic(text: "Entertainment"),
+              SizedBox(
+                height: 25,
               ),
-              MyTopic(
-                text: "Entertainment",
-                onTap: () {},
+              NewsTopic(text: "General"),
+              SizedBox(
+                height: 25,
               ),
-              const SizedBox(
-                width: 25,
+              NewsTopic(text: "Health"),
+              SizedBox(
+                height: 25,
               ),
-              MyTopic(
-                text: "General",
-                onTap: () {},
+              NewsTopic(text: "Science"),
+              SizedBox(
+                height: 25,
               ),
-              const SizedBox(
-                width: 25,
+              NewsTopic(text: "Sports"),
+              SizedBox(
+                height: 25,
               ),
-              MyTopic(
-                text: "Health",
-                onTap: () {},
-              ),
-              const SizedBox(
-                width: 25,
-              ),
-              MyTopic(
-                text: "Science",
-                onTap: () {},
-              ),
-              const SizedBox(
-                width: 25,
-              ),
-              MyTopic(
-                text: "Sports",
-                onTap: () {},
-              ),
-              const SizedBox(
-                width: 25,
-              ),
-              MyTopic(
-                text: "Technology",
-                onTap: () {},
-              ),
+              NewsTopic(text: "Technology"),
             ],
           ),
         ),

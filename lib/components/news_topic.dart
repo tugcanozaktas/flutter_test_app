@@ -1,26 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:test_drive/components/navigate_to_page.dart';
 
-class MyTopic extends StatelessWidget {
+class NewsTopic extends StatelessWidget {
   final String text;
-  final Function()? onTap;
-  const MyTopic({super.key, required this.onTap, required this.text});
+  const NewsTopic({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
-        onTap: onTap,
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => NavigateToPage(
+              pageName: text,
+            ),
+          ),
+        ),
         child: Container(
+          width: 500,
+          height: 80,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(50),
+              borderRadius: BorderRadius.circular(10),
               color: Theme.of(context).colorScheme.secondary),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text(
-              text,
-              style: TextStyle(
-                  color: Theme.of(context).colorScheme.inversePrimary),
+            child: Center(
+              child: Text(
+                text,
+                style: TextStyle(
+                    color: Theme.of(context).colorScheme.inversePrimary,
+                    fontSize: 25),
+              ),
             ),
           ),
         ),
