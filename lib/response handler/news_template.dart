@@ -1,11 +1,11 @@
-class News {
+class NewsTemplate {
   final String name;
   final String author;
   final String title;
   final String url;
   final String imageToUrl;
 
-  const News({
+  const NewsTemplate({
     required this.name,
     required this.author,
     required this.title,
@@ -13,7 +13,7 @@ class News {
     required this.imageToUrl,
   });
 
-  factory News.fromJson(Map<String, dynamic> json) {
+  factory NewsTemplate.fromJson(Map<String, dynamic> json) {
     return switch (json) {
       {
         'name': String name,
@@ -22,14 +22,14 @@ class News {
         'url': String url,
         'imageToUrl': String imageToUrl
       } =>
-        News(
+        NewsTemplate(
           name: name,
           author: author,
           title: title,
           url: url,
           imageToUrl: imageToUrl,
         ),
-      _ => throw const FormatException('Failed to load News.'),
+      _ => throw const FormatException('Failed to load NewsTemplate.'),
     };
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_drive/components/navigate_to_page.dart';
+import 'package:test_drive/pages/specific_news_page.dart';
 
 class NewsTopic extends StatelessWidget {
   final String text;
@@ -13,7 +13,7 @@ class NewsTopic extends StatelessWidget {
         onTap: () => Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => NavigateToPage(
+            builder: (context) => SpecificNews(
               pageName: text,
             ),
           ),
