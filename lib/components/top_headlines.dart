@@ -16,14 +16,19 @@ class TopHeadlinesTabBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<Article>>(
-      future:
-          newsAPI.getTopHeadlines(country: country ?? "us", category: pageName),
+      future: newsAPI.getTopHeadlines(
+          pageSize: 50, country: country ?? "us", category: pageName),
       builder: (BuildContext context, AsyncSnapshot<List<Article>> snapshot) {
         return snapshot.connectionState == ConnectionState.done
             ? snapshot.hasData
                 ? ArticleListVIew(articles: snapshot.data!)
                 : const Text("Error")
-            : const Text("Progress");
+            : const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CircularProgressIndicator(),
+                ],
+              );
       },
     );
   }

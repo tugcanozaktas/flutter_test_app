@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_drive/components/login_or_register.dart';
 import 'package:test_drive/components/my_list_tile.dart';
+import 'package:test_drive/components/my_search_bar.dart';
 import 'package:test_drive/pages/settings_page.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -25,9 +26,10 @@ class MyDrawer extends StatelessWidget {
               padding: EdgeInsets.all(8.0),
               child: Divider(),
             ),
+            MySearchBar(),
             MyListTile(
               icon: Icons.whatshot,
-              text: "H O T N E W S",
+              text: "T O P N E W S",
               onTap: () => {Navigator.pop(context)},
             ),
             const SizedBox(

@@ -1,8 +1,11 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import "package:http/http.dart" as http;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_api_flutter_package/model/article.dart';
+import 'package:test_drive/components/image_placeholder.dart';
 import 'package:test_drive/components/my_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -76,14 +79,23 @@ class ArticleListVIew extends StatelessWidget {
               height: 10,
             ),
             Builder(builder: (context) {
-              if (article.urlToImage != null) {
-                return Image.network(article.urlToImage!);
-              } else {
+              if (article.urlToImage == null) {
                 return Container(
-                  height: 200,
-                  decoration: const BoxDecoration(
-                    color: Colors.grey,
+                  width: 550,
+                  height: 150,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: Theme.of(context).colorScheme.tertiary,
                   ),
+                  child: const ImagePlaceholder(),
+                );
+              } else {
+                return CachedNetworkImage(
+                  imageUrl: article.urlToImage!,
+                  placeholder: (context, url) =>
+                      const CircularProgressIndicator(),
+                  errorWidget: (context, url, error) =>
+                      const ImagePlaceholder(),
                 );
               }
             }),

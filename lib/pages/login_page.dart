@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:test_drive/components/my_button.dart';
+import 'package:test_drive/components/my_logo.dart';
 import 'package:test_drive/components/my_text_field.dart';
 import 'package:test_drive/pages/home_page.dart';
 
@@ -34,27 +36,24 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const MyLogo(),
             //Logo
-            Icon(
-              Icons.newspaper,
-              size: 80,
-              color: Theme.of(context).colorScheme.inversePrimary,
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            //Name of the App
-            Text(
-              "TugcaNews",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Theme.of(context).colorScheme.inversePrimary,
-                fontSize: 25,
-              ),
-            ),
 
             const SizedBox(
-              height: 5,
+              height: 80,
+            ),
+            //Name of the App
+            Text("Log In",
+                style: GoogleFonts.ubuntu(
+                  textStyle: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.inversePrimary,
+                    fontSize: 25,
+                  ),
+                )),
+
+            const SizedBox(
+              height: 20,
             ),
             //Email Text field
             MyTextField(
@@ -63,7 +62,7 @@ class _LoginPageState extends State<LoginPage> {
               controller: emailController,
             ),
             const SizedBox(
-              height: 10,
+              height: 15,
             ),
             //Password Text field
             MyTextField(
@@ -72,14 +71,16 @@ class _LoginPageState extends State<LoginPage> {
               controller: passwordController,
             ),
             const SizedBox(
-              height: 10,
+              height: 30,
             ),
             //Login Button
             MouseRegion(
               cursor: SystemMouseCursors.click,
               child: MyButton(onTap: login, text: "Login"),
             ),
-
+            const SizedBox(
+              height: 5,
+            ),
             //Not a member text
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

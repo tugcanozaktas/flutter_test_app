@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:test_drive/components/my_button.dart';
+import 'package:test_drive/components/my_logo.dart';
 import 'package:test_drive/components/my_text_field.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -25,26 +27,22 @@ class _RegisterPageState extends State<RegisterPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             //Logo
-            Icon(
-              Icons.newspaper,
-              size: 80,
-              color: Theme.of(context).colorScheme.inversePrimary,
-            ),
+            const MyLogo(),
             const SizedBox(
-              height: 5,
+              height: 80,
             ),
             //Name of the App
-            Text(
-              "Lets create an account for you!",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Theme.of(context).colorScheme.inversePrimary,
-                fontSize: 20,
-              ),
-            ),
+            Text("Sign Up",
+                style: GoogleFonts.ubuntu(
+                  textStyle: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.inversePrimary,
+                    fontSize: 25,
+                  ),
+                )),
 
             const SizedBox(
-              height: 5,
+              height: 20,
             ),
             //Email Text field
             MyTextField(
@@ -77,13 +75,15 @@ class _RegisterPageState extends State<RegisterPage> {
               cursor: SystemMouseCursors.click,
               child: MyButton(onTap: () => {}, text: "Sign Up"),
             ),
-
+            const SizedBox(
+              height: 5,
+            ),
             //Not a member text
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Not a member ?",
+                  "Already have an account?",
                   style:
                       TextStyle(color: Theme.of(context).colorScheme.primary),
                 ),
@@ -95,7 +95,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   child: GestureDetector(
                     onTap: widget.onTap,
                     child: Text(
-                      "Register now",
+                      "Login now",
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Theme.of(context).colorScheme.primary),

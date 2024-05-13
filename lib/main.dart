@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:test_drive/components/login_or_register.dart';
-import 'package:test_drive/pages/specific_news_page.dart';
 import 'package:test_drive/themes/theme_provider.dart';
 
 void main() async {

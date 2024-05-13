@@ -13,20 +13,31 @@ class MyTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30.0),
-      child: TextField(
-        controller: controller,
-        obscureText: obscureText,
-        decoration: InputDecoration(
-            enabledBorder: OutlineInputBorder(
-                borderSide:
-                    BorderSide(color: Theme.of(context).colorScheme.tertiary)),
-            focusedBorder: OutlineInputBorder(
-                borderSide:
-                    BorderSide(color: Theme.of(context).colorScheme.primary)),
-            hintText: hintText,
-            hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary)),
+    return Container(
+      width: 350,
+      height: 50,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 30.0),
+        child: TextField(
+          style: TextStyle(
+              color: Theme.of(context).colorScheme.onPrimary,
+              fontSize: 16,
+              fontWeight: FontWeight.bold),
+          controller: controller,
+          obscureText: obscureText,
+          decoration: InputDecoration(
+              filled: true,
+              fillColor: Theme.of(context).colorScheme.inversePrimary,
+              enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide.none),
+              focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide.none),
+              hintText: hintText,
+              hintStyle:
+                  TextStyle(color: Theme.of(context).colorScheme.primary)),
+        ),
       ),
     );
   }
