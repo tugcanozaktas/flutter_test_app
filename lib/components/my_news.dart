@@ -1,12 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import "package:http/http.dart" as http;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_api_flutter_package/model/article.dart';
 import 'package:test_drive/components/image_placeholder.dart';
-import 'package:test_drive/components/my_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 _launchURLBrowser(urlName) async {
@@ -25,7 +21,6 @@ class ArticleListVIew extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(articles.length);
     return ListView.builder(
       itemCount: articles.length,
       itemBuilder: (context, index) => _buildArticleListItem(
