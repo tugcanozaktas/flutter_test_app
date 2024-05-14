@@ -45,6 +45,7 @@ dependencies:
   url_launcher:
   cached_network_image: 3.3.1
   font_awesome_flutter: ^10.7.0
+  flutter_svg: ^2.0.5
 
 dev_dependencies:
   flutter_test:

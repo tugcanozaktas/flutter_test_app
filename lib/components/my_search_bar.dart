@@ -6,10 +6,17 @@ class MySearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SearchBar(
-      onSubmitted: (value) => Navigator.push(context,
-          MaterialPageRoute(builder: (context) => SearchResults(input: value))),
-      leading: const Icon(Icons.search),
+    return SizedBox(
+      width: 150,
+      child: SearchBar(
+        onSubmitted: (value) => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => SearchResults(input: value),
+          ),
+        ),
+        leading: const Icon(Icons.search),
+      ),
     );
   }
 }

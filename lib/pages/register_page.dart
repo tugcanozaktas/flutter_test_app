@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:test_drive/components/my_button.dart';
+import 'package:test_drive/components/my_divider.dart';
 import 'package:test_drive/components/my_logo.dart';
 import 'package:test_drive/components/my_text_field.dart';
+import 'package:test_drive/components/signup_options.dart';
 
 class RegisterPage extends StatefulWidget {
   final void Function()? onTap;
@@ -79,31 +82,51 @@ class _RegisterPageState extends State<RegisterPage> {
               height: 5,
             ),
             //Not a member text
-            Row(
+
+            const MyDivider(text: "register"),
+            const SignUpOptions(),
+            const SizedBox(
+              height: 40,
+            ),
+            Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Already have an account?",
+                  "Already have account?",
                   style:
                       TextStyle(color: Theme.of(context).colorScheme.primary),
                 ),
-                const SizedBox(
-                  width: 5,
-                ),
-                MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: GestureDetector(
-                    onTap: widget.onTap,
-                    child: Text(
-                      "Login now",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Theme.of(context).colorScheme.primary),
+                Container(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: widget.onTap,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Log in here",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Theme.of(context).colorScheme.secondary),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(top: 4),
+                            child: Icon(
+                              Icons.keyboard_arrow_right,
+                              color: Theme.of(context).colorScheme.secondary,
+                              size: 30,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                )
+                ),
               ],
-            )
+            ),
           ],
         ),
       ),
