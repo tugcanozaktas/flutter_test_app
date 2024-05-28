@@ -19,11 +19,10 @@ class NewsTopic extends StatelessWidget {
           ),
         ),
         child: Container(
-          width: 500,
-          height: 80,
+          height: 50,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Theme.of(context).colorScheme.secondary),
+              borderRadius: BorderRadius.circular(55),
+              color: Theme.of(context).colorScheme.onPrimary),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Center(

@@ -9,34 +9,34 @@ class TopicSection extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.all(20.0),
       child: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
+        scrollDirection: Axis.horizontal,
         child: Padding(
           padding: EdgeInsets.only(top: 8.0),
-          child: Column(
+          child: Row(
             children: [
               NewsTopic(text: "Business"),
               SizedBox(
-                height: 25,
+                width: 25,
               ),
               NewsTopic(text: "Entertainment"),
               SizedBox(
-                height: 25,
+                width: 25,
               ),
               NewsTopic(text: "General"),
               SizedBox(
-                height: 25,
+                width: 25,
               ),
               NewsTopic(text: "Health"),
               SizedBox(
-                height: 25,
+                width: 25,
               ),
               NewsTopic(text: "Science"),
               SizedBox(
-                height: 25,
+                width: 25,
               ),
               NewsTopic(text: "Sports"),
               SizedBox(
-                height: 25,
+                width: 25,
               ),
               NewsTopic(text: "Technology"),
             ],
