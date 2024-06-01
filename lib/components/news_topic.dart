@@ -18,19 +18,22 @@ class NewsTopic extends StatelessWidget {
             ),
           ),
         ),
-        child: Container(
+        child: SizedBox(
           height: 50,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(55),
-              color: Theme.of(context).colorScheme.onPrimary),
-          child: Padding(
+          child: Container(
+            decoration: BoxDecoration(
+                border: Border(
+                    bottom: BorderSide(
+                        width: 3,
+                        color: Theme.of(context).colorScheme.secondary))),
             padding: const EdgeInsets.all(8.0),
             child: Center(
               child: Text(
                 text,
                 style: TextStyle(
-                    color: Theme.of(context).colorScheme.inversePrimary,
-                    fontSize: 25),
+                  color: Theme.of(context).colorScheme.secondary,
+                  fontSize: 25,
+                ),
               ),
             ),
           ),

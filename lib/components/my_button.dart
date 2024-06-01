@@ -21,7 +21,7 @@ class MyButton extends StatelessWidget {
           decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
-                  color: Color.fromARGB(255, 255, 255, 255).withAlpha(60),
+                  color: const Color.fromARGB(255, 255, 255, 255).withAlpha(60),
                   blurRadius: 6.0,
                   spreadRadius: 0.0,
                   offset: const Offset(

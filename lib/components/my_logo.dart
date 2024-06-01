@@ -3,7 +3,7 @@ import "package:google_fonts/google_fonts.dart";
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class MyLogo extends StatelessWidget {
-  const MyLogo({Key? key}) : super(key: key);
+  const MyLogo({super.key});
 
   @override
   Widget build(BuildContext context) {

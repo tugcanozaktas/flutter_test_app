@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:test_drive/components/home_page_sections.dart';
-import 'package:test_drive/components/topics_section.dart';
 import 'package:test_drive/pages/settings_page.dart';
 
 class HomeSavedSetting extends StatelessWidget {

@@ -9,14 +9,13 @@ class SearchResults extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final NewsAPI _newsAPI =
-        NewsAPI(apiKey: "f29f03ecfd244a0f83b52dfcc69bedca");
+    final NewsAPI newsAPI = NewsAPI(apiKey: "f29f03ecfd244a0f83b52dfcc69bedca");
     return Scaffold(
       appBar: AppBar(
         title: const Text("Search Result"),
       ),
       body: FutureBuilder<List<Article>>(
-        future: _newsAPI.getEverything(query: input),
+        future: newsAPI.getEverything(query: input),
         builder: (BuildContext context, AsyncSnapshot<List<Article>> snapshot) {
           return snapshot.connectionState == ConnectionState.done
               ? snapshot.hasData

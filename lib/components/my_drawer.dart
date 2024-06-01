@@ -26,7 +26,7 @@ class MyDrawer extends StatelessWidget {
               padding: EdgeInsets.all(8.0),
               child: Divider(),
             ),
-            MySearchBar(),
+            const MySearchBar(),
             MyListTile(
               icon: Icons.whatshot,
               text: "T O P N E W S",

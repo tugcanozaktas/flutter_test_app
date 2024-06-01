@@ -1,10 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_api_flutter_package/model/article.dart';
 import 'package:provider/provider.dart';
-import 'package:test_drive/components/image_placeholder.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 _launchURLBrowser(urlName) async {
@@ -29,7 +26,7 @@ class _ArticleListVIewState extends State<ArticleListVIew> {
   final yourScrollController = ScrollController();
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 300,
       child: Scrollbar(
         interactive: true,

@@ -16,7 +16,7 @@ class _SettingsPageState extends State<SettingsPage> {
     bool isDarkMode = Provider.of<ThemeProvider>(context).isDarkMode;
     return Scaffold(
       appBar: AppBar(
-        leading: SizedBox(),
+        leading: const SizedBox(),
         backgroundColor: Theme.of(context).colorScheme.background,
         title: const Text("Settings"),
       ),

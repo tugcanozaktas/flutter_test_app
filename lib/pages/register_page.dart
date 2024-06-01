@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:test_drive/components/my_button.dart';
 import 'package:test_drive/components/my_divider.dart';
@@ -113,7 +112,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 color: Theme.of(context).colorScheme.secondary),
                           ),
                           Container(
-                            margin: EdgeInsets.only(top: 4),
+                            margin: const EdgeInsets.only(top: 4),
                             child: Icon(
                               Icons.keyboard_arrow_right,
                               color: Theme.of(context).colorScheme.secondary,

@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:test_drive/components/my_button.dart';
 import 'package:test_drive/components/my_divider.dart';
 import 'package:test_drive/components/my_logo.dart';
 import 'package:test_drive/components/my_text_field.dart';
 import 'package:test_drive/components/signup_options.dart';
-import 'package:test_drive/pages/home_page.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:test_drive/pages/new_home_page.dart';
 
 // ignore: must_be_immutable
@@ -122,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
                                 color: Theme.of(context).colorScheme.secondary),
                           ),
                           Container(
-                            margin: EdgeInsets.only(top: 4),
+                            margin: const EdgeInsets.only(top: 4),
                             child: Icon(
                               Icons.keyboard_arrow_right,
                               color: Theme.of(context).colorScheme.secondary,
