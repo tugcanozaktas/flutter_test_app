@@ -8,5 +8,6 @@ ThemeData darkMode = ThemeData(
       secondary: const Color.fromARGB(255, 221, 14, 14),
       tertiary: const Color.fromARGB(255, 47, 47, 47),
       inversePrimary: Colors.grey.shade300,
+      onTertiary: const Color.fromARGB(255, 253, 70, 70),
       onSecondary: Colors.grey.shade300),
 );
