@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test_drive/components/build_tab.dart';
+import 'package:test_drive/components/tabbar_search_result.dart';
 
 class MyTabBar extends StatefulWidget {
   const MyTabBar({super.key});
@@ -31,58 +32,21 @@ class _MyTabBarState extends State<MyTabBar> {
                 children: [
                   buildTab(context, 'Business', tabNo, onTap),
                   const SizedBox(width: 15),
-                  const VerticalDivider(
-                    indent: 3,
-                    endIndent: 3,
-                    width: 20,
-                    thickness: 2,
-                    color: Colors.white,
-                  ),
                   const SizedBox(width: 15),
                   buildTab(context, 'Entertainment', tabNo, onTap),
                   const SizedBox(width: 15),
-                  const VerticalDivider(
-                    indent: 3,
-                    endIndent: 3,
-                    thickness: 2,
-                    color: Colors.white,
-                  ),
                   const SizedBox(width: 15),
                   buildTab(context, 'General', tabNo, onTap),
                   const SizedBox(width: 15),
-                  const VerticalDivider(
-                    indent: 3,
-                    endIndent: 3,
-                    thickness: 2,
-                    color: Colors.white,
-                  ),
                   const SizedBox(width: 15),
                   buildTab(context, 'Health', tabNo, onTap),
                   const SizedBox(width: 15),
-                  const VerticalDivider(
-                    indent: 3,
-                    endIndent: 3,
-                    thickness: 2,
-                    color: Colors.white,
-                  ),
                   const SizedBox(width: 15),
                   buildTab(context, 'Science', tabNo, onTap),
                   const SizedBox(width: 15),
-                  const VerticalDivider(
-                    indent: 3,
-                    endIndent: 3,
-                    thickness: 2,
-                    color: Colors.white,
-                  ),
                   const SizedBox(width: 15),
                   buildTab(context, 'Sports', tabNo, onTap),
                   const SizedBox(width: 15),
-                  const VerticalDivider(
-                    indent: 3,
-                    endIndent: 3,
-                    thickness: 2,
-                    color: Colors.white,
-                  ),
                   const SizedBox(width: 15),
                   buildTab(context, 'Technology', tabNo, onTap),
                 ],
@@ -91,7 +55,7 @@ class _MyTabBarState extends State<MyTabBar> {
           ),
         ),
         Builder(builder: (context) {
-          return Text(tabNo);
+          return TabBarSearchSection(pageName: tabNo);
         }),
       ],
     );

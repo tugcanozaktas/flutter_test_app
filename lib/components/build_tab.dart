@@ -20,7 +20,7 @@ Widget buildTab(BuildContext context, String title, String selectedTab,
       child: AnimatedDefaultTextStyle(
         duration: const Duration(milliseconds: 300),
         style: TextStyle(
-          fontSize: 25,
+          fontSize: 18,
           fontWeight: FontWeight.bold,
           color: isSelected
               ? Theme.of(context).colorScheme.secondary

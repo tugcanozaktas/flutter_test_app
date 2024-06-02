@@ -18,7 +18,7 @@ class TabBarTitle extends StatelessWidget {
       child: Text(
         "Business",
         style: TextStyle(
-          fontSize: 25,
+          fontSize: 5,
           fontWeight: FontWeight.bold,
           color: (tabNo == "Business"
               ? Theme.of(context).colorScheme.secondary
