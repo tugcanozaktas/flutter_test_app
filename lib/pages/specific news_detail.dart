@@ -19,6 +19,28 @@ class SpecificNewsDetail extends StatelessWidget {
           children: [MyLogo(), MySearchBar()],
         ),
       ),
+      body: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Container(
+            margin: const EdgeInsets.only(bottom: 20),
+            child: Text(
+              article.title!,
+              style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            margin: const EdgeInsets.only(bottom: 20),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Theme.of(context).colorScheme.onInverseSurface,
+            ),
+            child: Text(article.source.name!),
+          ),
+          Image.network(article.urlToImage!)
+        ]),
+      ),
     );
   }
 }
