@@ -14,8 +14,8 @@ class TabBarSearchSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final NewsAPI newsAPI = NewsAPI(apiKey: "f29f03ecfd244a0f83b52dfcc69bedca");
     return FutureBuilder<List<Article>>(
-      future: newsAPI.getTopHeadlines(
-          pageSize: 50, country: "us", category: pageName),
+      future:
+          newsAPI.getEverything(pageSize: 50, language: "en", query: pageName),
       builder: (BuildContext context, AsyncSnapshot<List<Article>> snapshot) {
         return snapshot.connectionState == ConnectionState.done
             ? snapshot.hasData
