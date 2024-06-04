@@ -1,8 +1,8 @@
 import "package:flutter/material.dart";
-import "package:test_drive/components/bottom_navbar.dart";
-import "package:test_drive/components/my_logo.dart";
-import "package:test_drive/components/my_search_bar.dart";
-import "package:test_drive/pages/home_saved_setting.dart";
+import "package:test_drive/components/Home%20Page/bottom_navbar.dart";
+import "package:test_drive/components/Home%20Page/App%20Bar/my_logo.dart";
+import "package:test_drive/components/Home%20Page/App%20Bar/my_search_bar.dart";
+import "package:test_drive/components/Home%20Page/home_saved_setting.dart";
 
 class NewHomePage extends StatefulWidget {
   const NewHomePage({super.key});

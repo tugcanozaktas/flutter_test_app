@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_api_flutter_package/model/article.dart';
 import 'package:news_api_flutter_package/news_api_flutter_package.dart';
-import 'package:test_drive/components/my_news.dart';
+import 'package:test_drive/components/Home%20Page/Top%20Headlines/my_news.dart';
 
 class SearchResults extends StatelessWidget {
   final String input;

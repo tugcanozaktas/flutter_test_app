@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:test_drive/components/my_button.dart';
 import 'package:test_drive/components/my_divider.dart';
-import 'package:test_drive/components/my_logo.dart';
-import 'package:test_drive/components/my_text_field.dart';
-import 'package:test_drive/components/signup_options.dart';
+import 'package:test_drive/components/Home%20Page/App%20Bar/my_logo.dart';
+import 'package:test_drive/components/Home%20Page/Login%20Page/my_text_field.dart';
+import 'package:test_drive/components/Home%20Page/Login%20Page/signup_options.dart';
 import 'package:test_drive/pages/new_home_page.dart';
 
 // ignore: must_be_immutable

@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:news_api_flutter_package/model/article.dart';
 import 'package:news_api_flutter_package/news_api_flutter_package.dart';
-import 'package:test_drive/components/tabbar_search_view.dart';
+import 'package:test_drive/components/Home%20Page/Top%20Headlines/my_news.dart';
 
-class TabBarSearchSection extends StatelessWidget {
+class TopHeadlinesTabBody extends StatelessWidget {
   final String pageName;
-  const TabBarSearchSection({
-    required this.pageName,
-    super.key,
-  });
+  final NewsAPI newsAPI;
+  final String? country;
+  const TopHeadlinesTabBody(
+      {required this.pageName,
+      required this.newsAPI,
+      super.key,
+      required this.country});
 
   @override
   Widget build(BuildContext context) {
-    final NewsAPI newsAPI = NewsAPI(apiKey: "f29f03ecfd244a0f83b52dfcc69bedca");
     return FutureBuilder<List<Article>>(
-      future:
-          newsAPI.getEverything(pageSize: 50, language: "en", query: pageName),
+      future: newsAPI.getTopHeadlines(
+          pageSize: 50, country: country ?? "us", category: pageName),
       builder: (BuildContext context, AsyncSnapshot<List<Article>> snapshot) {
         return snapshot.connectionState == ConnectionState.done
             ? snapshot.hasData
-                ? TabBarListView(articles: snapshot.data!)
+                ? ArticleListVIew(articles: snapshot.data!)
                 : const Text("Error")
             : const Row(
                 mainAxisAlignment: MainAxisAlignment.center,

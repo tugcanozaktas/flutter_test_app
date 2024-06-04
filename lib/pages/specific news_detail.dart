@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:news_api_flutter_package/model/article.dart';
-import 'package:test_drive/components/my_logo.dart';
-import 'package:test_drive/components/my_search_bar.dart';
+import 'package:test_drive/components/Home%20Page/App%20Bar/my_logo.dart';
+import 'package:test_drive/components/Home%20Page/App%20Bar/my_search_bar.dart';
+
+String getFormattedDate(String dtStr) {
+  var dt = DateTime.parse(dtStr);
+
+  return "${dt.day.toString().padLeft(2, '0')}/${dt.month.toString().padLeft(2, '0')}/${dt.year}, ${dt.hour.toString().padLeft(2, '0')}:${dt.minute.toString().padLeft(2, '0')}";
+}
 
 class SpecificNewsDetail extends StatelessWidget {
   final Article article;
@@ -38,7 +45,49 @@ class SpecificNewsDetail extends StatelessWidget {
             ),
             child: Text(article.source.name!),
           ),
-          Image.network(article.urlToImage!)
+          Image.network(article.urlToImage!),
+          Container(
+            margin: const EdgeInsets.only(top: 15, bottom: 15),
+            child: Row(
+              children: [
+                Text(
+                  "Published on: ",
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Theme.of(context).colorScheme.primary,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  getFormattedDate(article.publishedAt!),
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Theme.of(context).colorScheme.primary,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          ListView(
+            scrollDirection: Axis.vertical,
+            controller: ScrollController(),
+            children: [
+              Text(
+                article.description!,
+                style: const TextStyle(fontSize: 20),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Text(
+                article.content!,
+                style: const TextStyle(fontSize: 20),
+                maxLines: 4,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ],
+          )
         ]),
       ),
     );
