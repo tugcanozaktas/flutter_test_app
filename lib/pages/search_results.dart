@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news_api_flutter_package/model/article.dart';
 import 'package:news_api_flutter_package/news_api_flutter_package.dart';
 import 'package:test_drive/components/Home%20Page/Top%20Headlines/my_news.dart';
+import 'package:test_drive/components/Search%20Page/ArticleListViewVertical.dart';
 
 class SearchResults extends StatelessWidget {
   final String input;
@@ -19,7 +20,7 @@ class SearchResults extends StatelessWidget {
         builder: (BuildContext context, AsyncSnapshot<List<Article>> snapshot) {
           return snapshot.connectionState == ConnectionState.done
               ? snapshot.hasData
-                  ? ArticleListVIew(articles: snapshot.data!)
+                  ? ArticleListVIewVertical(articles: snapshot.data!)
                   : const Text("Error")
               : const Row(
                   mainAxisAlignment: MainAxisAlignment.center,

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:news_api_flutter_package/model/article.dart';
@@ -21,9 +22,15 @@ class SpecificNewsDetail extends StatelessWidget {
         toolbarHeight: 90,
         automaticallyImplyLeading: false,
         backgroundColor: Theme.of(context).colorScheme.background,
-        title: const Row(
+        title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [MyLogo(), MySearchBar()],
+          children: [
+            BackButton(
+              color: Theme.of(context).colorScheme.secondary,
+            ),
+            MyLogo(),
+            MySearchBar()
+          ],
         ),
       ),
       body: Container(
@@ -69,25 +76,21 @@ class SpecificNewsDetail extends StatelessWidget {
               ],
             ),
           ),
-          ListView(
-            scrollDirection: Axis.vertical,
-            controller: ScrollController(),
-            children: [
-              Text(
-                article.description!,
-                style: const TextStyle(fontSize: 20),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              Text(
-                article.content!,
-                style: const TextStyle(fontSize: 20),
-                maxLines: 4,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ],
-          )
+          Column(children: [
+            Text(
+              article.description!,
+              style: const TextStyle(fontSize: 20),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Text(
+              article.content!,
+              style: const TextStyle(fontSize: 20),
+              maxLines: 4,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ])
         ]),
       ),
     );

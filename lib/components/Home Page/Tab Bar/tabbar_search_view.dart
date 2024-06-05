@@ -16,11 +16,11 @@ class _TabBarListViewState extends State<TabBarListView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 20),
-      width: 450,
-      height: 240,
+      height: 405,
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       child: ListView.builder(
         scrollDirection: Axis.vertical,
+        physics: const ScrollPhysics(),
         itemCount: widget.articles.length,
         itemBuilder: (context, index) => _buildArticleListItem(
           context,
@@ -57,7 +57,7 @@ class _TabBarListViewState extends State<TabBarListView> {
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            width: 220,
+            width: 173,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
